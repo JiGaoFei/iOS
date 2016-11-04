@@ -60,7 +60,7 @@
     
    
     /**按钮的状态
-     *1.UIControlStateNormal  45
+     *1.UIControlStateNormal
       1>除开 UIControlStateHighlighted  UIControlStateDisabled  UIControlStateSelected 以外 其它情况都是nomoral状态
       2>这种状态下的按钮是可以接受点击事件的
      
