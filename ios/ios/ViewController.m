@@ -84,6 +84,18 @@
      
      */
     
+    
+    /**
+     *带有subscript 基本上都是集合
+     */
+    /**
+     *tableView的重要属性
+     *1.contentSize.height:所有内容的高度
+     *2.contentInset:在内容周围额外增加的间距（内边距），始终粘着内容
+     *3.contentOffset:内容距离frame矩形框，偏移多少
+     */
+
+    
     [self.view addSubview:titleView];
     // Do any additional setup after loading the view, typically from a nib.
 }
