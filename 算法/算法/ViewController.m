@@ -39,7 +39,7 @@
     
    
     
-    // [self function1];
+  //  [self function1];
     
     
      // 简单插入排序：2.将一个数据插入到已经排好序的有序数据中，从而得到一个新的，个数加一的有序数据
@@ -49,15 +49,7 @@
      2- 先排列好前两个数"3,5",将2插入到前面排好的有序数列中去,变为"2,3,5"
      3- 再将6插入到"2,3,5"中,依次插入即可
      */
-  //   [self function2];
-   // [self function3];
-    
-    /**
-     *二分法排序
-     */
-    NSArray *array =@[@"12",@"3",@"43",@"34",@"35",@"100",@"98",@"2"];
-  NSArray *arr =   [self binarySort:array];
-    NSLog(@"%@",arr);
+    [self function2];
     // Do any additional setup after loading the view, typically from a nib.
 }
 #pragma mark - 简单插入排序1
@@ -156,32 +148,6 @@
         NSLog(@"完后数组内容为%@",arr);
     }
     
-}
-/**
- *二分法排序
- */
-- (NSArray *)binarySort:(NSArray *)array {
-    NSMutableArray *result = [array mutableCopy];
-    for (NSInteger index = 0; index < result.count; index++) {
-        NSInteger start, end, middle;
-        start  = 0;
-        end    = index - 1;
-        middle = 0;
-        NSInteger temp = [result[index] integerValue];
-        while (start <= end) {
-            middle = (start + end) / 2;
-            if ([array[middle] integerValue] >  temp) {
-                end = middle - 1;
-            }else{
-                start = middle + 1;
-            }
-        }
-        for (NSInteger j = index - 1; j > end; j--) {
-            result[j+1] = result[j];
-        }
-        [result replaceObjectAtIndex:end+1 withObject:[NSNumber numberWithInteger:temp]];
-    }
-    return [result copy];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
