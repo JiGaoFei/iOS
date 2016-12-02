@@ -49,7 +49,8 @@
      2- 先排列好前两个数"3,5",将2插入到前面排好的有序数列中去,变为"2,3,5"
      3- 再将6插入到"2,3,5"中,依次插入即可
      */
-    [self function2];
+    // [self function2];
+    [self function3];
     // Do any additional setup after loading the view, typically from a nib.
 }
 #pragma mark - 简单插入排序1
