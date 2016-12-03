@@ -50,7 +50,14 @@
      3- 再将6插入到"2,3,5"中,依次插入即可
      */
     // [self function2];
-    [self function3];
+    // [self function3];
+    /**
+     *二分法算法
+     */
+    NSArray *arr1 = @[@"5",@"4",@"35",@"12",@"89",@"54",@"23"];
+    
+    NSLog(@"%@",[self binarySort:arr1]);
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 #pragma mark - 简单插入排序1
@@ -149,6 +156,33 @@
         NSLog(@"完后数组内容为%@",arr);
     }
     
+}
+/**
+ *二分法算法
+ */
+
+- (NSArray *)binarySort:(NSArray *)array {
+    NSMutableArray *result = [array mutableCopy];
+    for (NSInteger index = 0; index < result.count; index++) {
+        NSInteger start, end, middle;
+        start  = 0;
+        end    = index - 1;
+        middle = 0;
+        NSInteger temp = [result[index] integerValue];
+        while (start <=end) {
+            middle = (start + end) / 2;
+            if ([array[middle] integerValue] >  temp) {
+                end = middle - 1;
+            }else{
+                start = middle + 1;
+            }
+        }
+        for (NSInteger j = index - 1; j > end; j--) {
+            result[j+1] = result[j];
+        }
+        [result replaceObjectAtIndex:end+1 withObject:[NSNumber numberWithInteger:temp]];
+    }
+    return [result copy];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
